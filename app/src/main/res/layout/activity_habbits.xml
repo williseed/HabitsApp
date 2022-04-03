@@ -7,24 +7,26 @@
     tools:context=".HabbitsActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:text="Add"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/buttonHome"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRemove"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/buttonRemove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="remove"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintStart_toEndOf="@+id/button2" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonHome"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
+        app:layout_constraintStart_toEndOf="@+id/buttonAdd" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/buttonHome"
         android:layout_width="163dp"
         android:layout_height="55dp"
         android:layout_marginBottom="60dp"
@@ -34,20 +36,21 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/buttonEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="68dp"
         android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/buttonHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        tools:layout_editor_absoluteY="568dp" />
+        app:layout_constraintStart_toEndOf="@+id/buttonRemove" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="396dp"
         android:layout_height="532dp"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRemove"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -57,106 +60,119 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView2"
+            <LinearLayout
+                android:id="@+id/HealthLinearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="HEALTH"
-                android:textSize="24sp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editTextTextPersonName5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                <TextView
+                    android:id="@+id/HealthBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HEALTH"
+                    android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                <EditText
+                    android:id="@+id/HealthHabit1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                <EditText
+                    android:id="@+id/HealthHabit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                <EditText
+                    android:id="@+id/HealthHabit3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                <EditText
+                    android:id="@+id/HealthHabit4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SCHOOL"
-                android:textSize="24sp" />
+                <EditText
+                    android:id="@+id/HealthHabit5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/editTextTextPersonName11"
+            <LinearLayout
+                android:id="@+id/SchoolLinearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/editTextTextPersonName13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                <TextView
+                    android:id="@+id/SchoolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SCHOOL"
+                    android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                <EditText
+                    android:id="@+id/SchoolHabit1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                <EditText
+                    android:id="@+id/SchoolHabit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="WORK"
-                android:textSize="24sp" />
+                <EditText
+                    android:id="@+id/SchoolHabit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/editTextTextPersonName16"
+            <LinearLayout
+                android:id="@+id/WorkLinearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habit" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/WorkBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WORK"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/WorkHabit1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Habit" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
