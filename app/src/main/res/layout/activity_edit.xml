@@ -8,7 +8,7 @@
     tools:context=".EditActivity">
 
     <EditText
-        android:id="@+id/textView"
+        android:id="@+id/NameView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
@@ -17,7 +17,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/textView6"
+        android:id="@+id/NoteView"
         android:layout_width="match_parent"
         android:layout_height="126dp"
         android:layout_weight="0"
@@ -31,5 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Save Changes" />
 
 </LinearLayout>
