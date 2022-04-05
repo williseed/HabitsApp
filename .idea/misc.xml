@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/willi/OneDrive/Documents/School/Android Programming/Semester Project/HabitsApp/app/src/main/res/layout/activity_edit.xml" value="0.1" />
-        <entry key="..\:/Users/willi/OneDrive/Documents/School/Android Programming/Semester Project/HabitsApp/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/Users/willi/OneDrive/Documents/School/Android Programming/Semester Project/HabitsApp/app/src/main/res/layout/activity_login.xml" value="0.1142857142857143" />
+        <entry key="..\:/Users/willi/OneDrive/Documents/School/Android Programming/Semester Project/HabitsApp/app/src/main/res/layout/activity_habbits.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/willi/OneDrive/Documents/School/Android Programming/Semester Project/HabitsApp/app/src/main/res/layout/activity_home.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/willi/OneDrive/Documents/School/Android Programming/Semester Project/HabitsApp/app/src/main/res/layout/activity_login.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/willi/OneDrive/Documents/School/Android Programming/Semester Project/HabitsApp/app/src/main/res/layout/activity_progress.xml" value="0.18857142857142858" />
       </map>
     </option>
   </component>
