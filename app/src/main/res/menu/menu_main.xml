@@ -5,9 +5,12 @@
         android:id="@+id/menu_home"
         android:title="Home"
         app:showAsAction="always"
+        android:icon="@drawable/home_white"
         />
     <item
         android:id="@+id/menu_logout"
         android:title="LOGOUT"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:icon="@drawable/logout_white"
+        />
 </menu>
