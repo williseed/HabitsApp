@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordEntered;
     private Button signIn;
     private Button reset;
+    private boolean loggedIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +41,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = usernameEntered.getText().toString();
                 String password = passwordEntered.getText().toString();
-                if(correctCredentials(username,password)){
-                    Toast.makeText(getApplicationContext(),"Welcome!", Toast.LENGTH_SHORT).show();
+                if (correctCredentials(username, password)) {
+                    loggedIn = true;
+                    Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
                 } else
-                    Toast.makeText(getApplicationContext(),"Invalid Credentials", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_LONG).show();
             }
 
 
@@ -62,15 +65,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
     /*Checks whether user has given valid credentials
-    * Params: takes in strings username & password
-    * Return: true if credentials are valid, false otherwise*/
-    public boolean correctCredentials(String username, String password){
+     * Params: takes in strings username & password
+     * Return: true if credentials are valid, false otherwise*/
+    public boolean correctCredentials(String username, String password) {
         //password: 2022project, username: project@ucmo.edu
-        final String hashedPass ="750dc409838c33f3b5fe0ed691b0328eef39d739dd0814dd116b84ebf22862f8";
+        final String hashedPass = "750dc409838c33f3b5fe0ed691b0328eef39d739dd0814dd116b84ebf22862f8";
         final String correctUsername = "project@ucmo.edu";
         String userHashedEntry = hashPassword(password);
 
-        if (userHashedEntry.equals(hashedPass)&& username.equals(correctUsername))
+        if (userHashedEntry.equals(hashedPass) && username.equals(correctUsername))
             return true;
         else {
             System.out.println(userHashedEntry);
@@ -83,25 +86,55 @@ public class LoginActivity extends AppCompatActivity {
     public String hashPassword(String password) {
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            byte [] arr = messageDigest.digest(password.getBytes());
+            byte[] arr = messageDigest.digest(password.getBytes());
             StringBuffer stringBuffer = new StringBuffer();
 
-            for (int x = 0; x < arr.length; x++){
-                stringBuffer.append(Integer.toHexString((arr[x] & 0xFF) | 0x100).substring(1,3));
+            for (int x = 0; x < arr.length; x++) {
+                stringBuffer.append(Integer.toHexString((arr[x] & 0xFF) | 0x100).substring(1, 3));
             }
             return stringBuffer.toString();
+        } catch (NoSuchAlgorithmException e) {
+            System.out.print(e);
         }
-        catch (NoSuchAlgorithmException e){ System.out.print(e);}
         return null;
     }
 
     //opens dialogue telling user to contact support
-    public void resetAlertDialogue(){
+    public void resetAlertDialogue() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Password Reset");
         builder.setMessage("Please email support@ucmo.edu");
         builder.setIcon(android.R.drawable.ic_dialog_alert);
         AlertDialog dialogue = builder.create();
         dialogue.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.menu_home:
+                if (loggedIn == true) {
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(intent);
+                }
+                break;
+            case R.id.menu_logout:
+                if(loggedIn) {
+                    loggedIn = false;
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                    break;
+                }
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
