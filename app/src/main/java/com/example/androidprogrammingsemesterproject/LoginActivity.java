@@ -3,13 +3,17 @@ package com.example.androidprogrammingsemesterproject;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.security.MessageDigest;
@@ -46,8 +50,12 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
+                    usernameEntered.setText("");
                 } else
                     Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_LONG).show();
+                hideKeyboard(view);
+                passwordEntered.setText("");
+
             }
 
 
@@ -57,7 +65,9 @@ public class LoginActivity extends AppCompatActivity {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                hideKeyboard(view);
                 resetAlertDialogue();
+
             }
         });
 
@@ -109,12 +119,16 @@ public class LoginActivity extends AppCompatActivity {
         dialogue.show();
     }
 
+    //inflates the actionbar menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return true;
     }
 
+    //Depeding on the menu item selected on the actiobar, it goes to homepage
+    //or it logs out user
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -123,18 +137,44 @@ public class LoginActivity extends AppCompatActivity {
                 if (loggedIn == true) {
                     Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
+                    clearUserInput();
+                    hideKeyboard(this);
                 }
+
                 break;
             case R.id.menu_logout:
                 if(loggedIn) {
                     loggedIn = false;
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
-                    break;
+
                 }
+                clearUserInput();
+                hideKeyboard(this);
+
+                break;
             default:
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    //clears the keyboard from focus
+    public void hideKeyboard(View view){
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getApplicationWindowToken(),0);
+
+    }
+    //clears the keyboard from focus but takes in activity
+    public void hideKeyboard(Activity activity){
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),0);
+
+    }
+
+    //clears username and appsword input
+    public void clearUserInput(){
+        passwordEntered.setText("");
+        usernameEntered.setText("");
     }
 }
