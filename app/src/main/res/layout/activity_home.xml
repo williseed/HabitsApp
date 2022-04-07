@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <fragment
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="405dp"
         android:layout_height="432dp"
         app:layout_constraintBottom_toTopOf="@+id/button3"
