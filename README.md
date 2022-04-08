@@ -7,3 +7,5 @@ Below is how the project is divided as of right now (I will try my best to split
 5. Habits Edit (activity_edit.xml): Aaron with help from Zack
 
 Feel free to modify the page you are assigned to as you see fit, even the user interface.
+
+CREDENTIALS: password: 2022project, username: project@ucmo.edu
