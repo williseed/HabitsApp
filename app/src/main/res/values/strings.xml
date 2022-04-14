@@ -2,4 +2,6 @@
     <string name="app_name">Improve Yourself</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_a_category_and_name_your_habbit">Select a Category and name your Habbit</string>
+    <string name="name">Name</string>
 </resources>

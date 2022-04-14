@@ -1,4 +1,4 @@
-# HabitsApp
+project@ucmo.edu# HabitsApp
 Below is how the project is divided as of right now (I will try my best to split the workload as evenly as possible). Each person will be responsible for the items with their name on it. That person will be in charge of how it looks and how it functions. Also, in the final presentation, each person will present the pages/functionalities they have worked on. 
 1. Login Page (activity_login.xml): Will
 2. Home Page (activity_home.xml): Mark
