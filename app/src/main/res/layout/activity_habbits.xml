@@ -73,45 +73,6 @@
                     android:text="HEALTH"
                     android:textSize="24sp" />
 
-                <EditText
-                    android:id="@+id/HealthHabit1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
-
-                <EditText
-                    android:id="@+id/HealthHabit2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
-
-                <EditText
-                    android:id="@+id/HealthHabit3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
-
-                <EditText
-                    android:id="@+id/HealthHabit4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
-
-                <EditText
-                    android:id="@+id/HealthHabit5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
             </LinearLayout>
 
             <LinearLayout
@@ -127,29 +88,6 @@
                     android:text="SCHOOL"
                     android:textSize="24sp" />
 
-                <EditText
-                    android:id="@+id/SchoolHabit1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
-
-                <EditText
-                    android:id="@+id/SchoolHabit2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
-
-                <EditText
-                    android:id="@+id/SchoolHabit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
             </LinearLayout>
 
             <LinearLayout
@@ -165,13 +103,6 @@
                     android:text="WORK"
                     android:textSize="24sp" />
 
-                <EditText
-                    android:id="@+id/WorkHabit1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Habit" />
             </LinearLayout>
 
         </LinearLayout>

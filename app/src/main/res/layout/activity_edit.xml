@@ -32,6 +32,30 @@
         android:layout_weight="0"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+        <RadioButton
+            android:id="@+id/radioHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Health" />
+
+        <RadioButton
+            android:id="@+id/radioWork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Work" />
+
+        <RadioButton
+            android:id="@+id/radioSchool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="School" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="match_parent"
