@@ -63,6 +63,16 @@ public class ActivityItem {
         this.activityPriority = activityPriority;
     }
 
+    public double getProgressPercent(){
+        if(doubleProgress == 0)
+        {
+            return 0;
+        }
+        else {
+            return doubleProgress / doubleMax;
+        }
+    }
+
     public void setdoubleMax(double floatMax) {
         this.doubleMax = doubleMax;
     }
