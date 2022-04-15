@@ -45,7 +45,7 @@ public class HabbitsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), EditActivity.class);
                 intent.putExtra("newHabbitBool", false);
-                intent.putExtra("HabbitName", )
+                intent.putExtra("HabbitName", true);
                 startActivity(intent);
             }
         });

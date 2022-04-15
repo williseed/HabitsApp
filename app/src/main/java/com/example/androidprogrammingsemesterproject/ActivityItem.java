@@ -4,17 +4,15 @@ import android.graphics.drawable.Drawable;
 
 public class ActivityItem {
     String name, unitType;
-    int intMax, intProgress, activityPriority, resID, streak;
-    float floatMax, floatProgress;
+    int activityPriority, resID, streak;
+    double doubleMax, doubleProgress;
 
-    public ActivityItem(String name,String unitType, int intMax, int intProgress, int activityPriority, float floatMax, float floatProgress, int resID, int streak){
+    public ActivityItem(String name,String unitType, int activityPriority, double doubleMax, double doubleProgress, int resID, int streak){
         this.name = name;
         this.unitType = unitType;
-        this.intMax = intMax;
-        this.intProgress = intProgress;
         this.activityPriority = activityPriority;
-        this.floatMax = floatMax;
-        this.floatProgress = floatProgress;
+        this.doubleMax = doubleMax;
+        this.doubleProgress = doubleProgress;
         this.resID = resID;
         this.streak = streak;
     }
@@ -23,24 +21,26 @@ public class ActivityItem {
         return name;
     }
 
-    public int getIntMax() {
-        return intMax;
+    public String getActivityPriority() {
+        String priority;
+        if (activityPriority == 1){
+            priority = "High";
+        }
+        else if (activityPriority == 2){
+            priority = "Med.";
+        }
+        else {
+            priority = "Low";
+        }
+        return priority;
     }
 
-    public int getIntProgress() {
-        return intProgress;
+    public double getdoubleMax() {
+        return doubleMax;
     }
 
-    public int getActivityPriority() {
-        return activityPriority;
-    }
-
-    public float getFloatMax() {
-        return floatMax;
-    }
-
-    public float getFloatProgress() {
-        return floatProgress;
+    public double getdoubleProgress() {
+        return doubleProgress;
     }
 
     public void setName(String name) {
@@ -59,24 +59,16 @@ public class ActivityItem {
         return streak;
     }
 
-    public void setIntMax(int intMax) {
-        this.intMax = intMax;
-    }
-
-    public void setIntProgress(int intProgress) {
-        this.intProgress = intProgress;
-    }
-
     public void setActivityPriority(int activityPriority) {
         this.activityPriority = activityPriority;
     }
 
-    public void setFloatMax(float floatMax) {
-        this.floatMax = floatMax;
+    public void setdoubleMax(double floatMax) {
+        this.doubleMax = doubleMax;
     }
 
-    public void setFloatProgress(float floatProgress) {
-        this.floatProgress = floatProgress;
+    public void setdoubleProgress(double doubleProgress) {
+        this.doubleProgress = doubleProgress;
     }
 
     public void setResID(int resID) {
@@ -96,13 +88,11 @@ public class ActivityItem {
         return "ActivityItem{" +
                 "name='" + name + '\'' +
                 ", unitType='" + unitType + '\'' +
-                ", intMax=" + intMax +
-                ", intProgress=" + intProgress +
                 ", activityPriority=" + activityPriority +
                 ", resID=" + resID +
                 ", streak=" + streak +
-                ", floatMax=" + floatMax +
-                ", floatProgress=" + floatProgress +
+                ", floatMax=" + doubleMax +
+                ", floatProgress=" + doubleProgress +
                 '}';
     }
 }

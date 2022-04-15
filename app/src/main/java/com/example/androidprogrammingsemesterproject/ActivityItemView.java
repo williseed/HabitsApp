@@ -42,16 +42,16 @@ public class ActivityItemView extends LinearLayout{
         nameText.setText(name);
     }
 
-    public void setUnitText(String unit) {
-        unitText.setText(unit);
+    public void setUnitText(String unit, float progress, float max) {
+        unitText.setText(progress + " / " + max + " " + unit + "(s)");
     }
 
-    public void setStreakText(String streak) {
-        streakText.setText(streak);
+    public void setStreakText(int streak) {
+        streakText.setText("Streak: " + streak);
     }
 
     public void setPriorityText(String priority) {
-        priorityText.setText(priority);
+        priorityText.setText("Priority: " + priority);
     }
 
     public void setProgressBar(int progress) {

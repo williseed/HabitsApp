@@ -9,6 +9,7 @@
     tools:context=".ProgressActivity">
 
     <ListView
+        android:id="@+id/progressListView"
         android:layout_width="match_parent"
         android:layout_height="371dp"
         android:choiceMode="singleChoice" />
@@ -21,20 +22,20 @@
         android:text="ACTIVITIES COMPLETE" />
 
     <ProgressBar
-        android:id="@+id/progressBar15"
+        android:id="@+id/totalActPB"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:scaleY="4" />
 
     <Button
-        android:id="@+id/button27"
+        android:id="@+id/editSelActInProgress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Edit Selected" />
 
     <Button
-        android:id="@+id/button28"
+        android:id="@+id/homeFromProgress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Home" />
