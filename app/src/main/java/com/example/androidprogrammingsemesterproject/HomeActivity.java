@@ -22,6 +22,15 @@ public class HomeActivity extends AppCompatActivity {
         fragment = new HomeFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container,fragment);
 
+        // a button to open fragment
+        Button buttonRewards = (Button)findViewById(R.id.buttonRewards);
+        buttonRewards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+            }
+        }); // end buttonRewards
+
         // a button links to ProgressActivity.class // by intent
         Button buttonViewProgress = (Button)findViewById(R.id.buttonViewProgress);
         buttonViewProgress.setOnClickListener(new View.OnClickListener() {
