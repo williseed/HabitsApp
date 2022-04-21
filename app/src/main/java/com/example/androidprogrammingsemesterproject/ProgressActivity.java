@@ -2,8 +2,10 @@ package com.example.androidprogrammingsemesterproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -53,12 +55,31 @@ public class ProgressActivity extends AppCompatActivity {
         });
     }
 
-    // action bar
+    // ALL THE ACTION BAR CODE IS BELOW/////////////////////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.menu_home:
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_logout:
+                LoginActivity.loggedIn = false;
+                Intent intent1 = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent1);
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    //////////////////////////////////////////////////////////////////////////////
 
     class ActivityAdapter extends BaseAdapter{
         ArrayList<ActivityItem> items = new ArrayList<ActivityItem>();

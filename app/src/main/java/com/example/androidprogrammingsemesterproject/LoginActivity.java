@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordEntered;
     private Button signIn;
     private Button reset;
-    private boolean loggedIn;
+    public static boolean loggedIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
