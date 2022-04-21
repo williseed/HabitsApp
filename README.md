@@ -9,3 +9,30 @@ Below is how the project is divided as of right now (I will try my best to split
 Feel free to modify the page you are assigned to as you see fit, even the user interface.
 
 CREDENTIALS: password: 2022project, username: project@ucmo.edu
+
+Whatever class you want to add the the main top bar to add this code: 
+    // ALL THE ACTION BAR CODE IS BELOW/////////////////////////////////////////////
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.menu_home:
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_logout:
+                LoginActivity.loggedIn = false;
+                Intent intent1 = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent1);
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    //////////////////////////////////////////////////////////////////////////////
