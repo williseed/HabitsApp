@@ -11,17 +11,42 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
+
+import com.google.android.material.chip.Chip;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HabbitsActivity extends AppCompatActivity {
+    Bundle extras = getIntent().getExtras();
     String currentString;
+    String newHabbitName = extras.getString("HabbitObjectName");
+    LinearLayout HealthLayout = findViewById(R.id.HealthLinearLayout);
+    LinearLayout WorkLayout = findViewById(R.id.WorkLinearLayout);
+    LinearLayout SchoolLayout = findViewById(R.id.SchoolLinearLayout);
+    boolean chipReadyPrep = extras.getBoolean("chipReady");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habbits);
+
+        if (chipReadyPrep = true) {
+            HabbitObject chippedHabit = new HabbitObject(newHabbitName);
+            Chip chip = new Chip(this);
+            chip.setText(chippedHabit.name);
+            if(chippedHabit.type == "Work"){
+                WorkLayout.addView(chip);
+            }
+            else if(chippedHabit.type == "School"){
+                SchoolLayout.addView(chip);
+            }
+            else if(chippedHabit.type == "Health"){
+                HealthLayout.addView(chip);
+            }
+            
+        }
 
         Button buttonAdd = findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +86,7 @@ public class HabbitsActivity extends AppCompatActivity {
             }
         });
     }
+
     // ALL THE ACTION BAR CODE IS BELOW/////////////////////////////////////////////
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

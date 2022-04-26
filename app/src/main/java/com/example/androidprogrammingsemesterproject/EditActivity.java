@@ -2,6 +2,7 @@ package com.example.androidprogrammingsemesterproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +27,7 @@ public class EditActivity extends AppCompatActivity {
         ImageView imageSET = findViewById(R.id.imageView);
         Button SaveButton = findViewById(R.id.buttonSave);
 
-        String name=HabbitName.toString();
+        String name =HabbitName.toString();
         radioWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,11 +63,11 @@ SaveButton.setOnClickListener(new View.OnClickListener() {
 
             }
             else if (radioWork.isChecked()) {
-                newHabbit.type = "Health";
+                newHabbit.type = "Work";
 
             }
             else if (radioSchool.isChecked()) {
-                newHabbit.type = "Health";
+                newHabbit.type = "School";
 
             }
 
@@ -81,15 +82,20 @@ SaveButton.setOnClickListener(new View.OnClickListener() {
 
             }
             else if (radioWork.isChecked()) {
-                newHabbit.type = "Health";
+                newHabbit.type = "Work";
 
             }
             else if (radioSchool.isChecked()) {
-                newHabbit.type = "Health";
+                newHabbit.type = "School";
 
             }
 
         }
+        boolean chipReady = false;
+        Intent intent = new Intent(getApplicationContext(), HabbitsActivity.class);
+        intent.putExtra("HabbitObjectName", name);
+        intent.putExtra("chipReady", true);
+        startActivity(intent);
     }
 });
     }
