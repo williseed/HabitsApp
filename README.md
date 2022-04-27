@@ -8,7 +8,7 @@ Below is how the project is divided as of right now (I will try my best to split
 
 Feel free to modify the page you are assigned to as you see fit, even the user interface.
 
-CREDENTIALS: password: 2022project, username: project@ucmo.edu
+CREDENTIALS: password: " " (just a space), username: " " (just a space)
 
 Whatever class you want to add the the main top bar to add this code: 
     // ALL THE ACTION BAR CODE IS BELOW/////////////////////////////////////////////
