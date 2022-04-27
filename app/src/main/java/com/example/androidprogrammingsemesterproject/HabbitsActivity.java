@@ -1,10 +1,5 @@
 package com.example.androidprogrammingsemesterproject;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,26 +7,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
-
 import com.google.android.material.chip.Chip;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class HabbitsActivity extends AppCompatActivity {
-    Chip chip = new Chip(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habbits);
-        ///////////////////////////////////////
-        Bundle extras = getIntent().getExtras();
         LinearLayout HealthLayout = findViewById(R.id.HealthLinearLayout);
         LinearLayout WorkLayout = findViewById(R.id.WorkLinearLayout);
         LinearLayout SchoolLayout = findViewById(R.id.SchoolLinearLayout);
-        String newHabbitName = extras.getString("HabbitObjectName");
-        boolean chipReadyPrep = extras.getBoolean("chipReady");
+        Chip chip = new Chip(this);
+        ///////////////////////////////////////
+        Intent intent = getIntent();
+        String newHabbitName = intent.getStringExtra("HabbitObjectName");
+        boolean chipReadyPrep = intent.getBooleanExtra("chipReady", false);
+
         ///////////////////////////////////////
         //passed variable check
         if (chipReadyPrep == true) {
@@ -48,7 +40,6 @@ public class HabbitsActivity extends AppCompatActivity {
             else if(chippedHabit.type == "Health"){
                 HealthLayout.addView(chip);
             } //This code generates chips, which are toggable text boxes
-
         }
 
         Button buttonAdd = findViewById(R.id.buttonAdd);
