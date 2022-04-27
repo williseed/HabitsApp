@@ -20,22 +20,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HabbitsActivity extends AppCompatActivity {
-    Bundle extras = getIntent().getExtras();
-    String currentString;
-    String newHabbitName = extras.getString("HabbitObjectName");
-    LinearLayout HealthLayout = findViewById(R.id.HealthLinearLayout);
-    LinearLayout WorkLayout = findViewById(R.id.WorkLinearLayout);
-    LinearLayout SchoolLayout = findViewById(R.id.SchoolLinearLayout);
-    boolean chipReadyPrep = extras.getBoolean("chipReady");
+    Chip chip = new Chip(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habbits);
-
-        if (chipReadyPrep = true) {
+        ///////////////////////////////////////
+        Bundle extras = getIntent().getExtras();
+        LinearLayout HealthLayout = findViewById(R.id.HealthLinearLayout);
+        LinearLayout WorkLayout = findViewById(R.id.WorkLinearLayout);
+        LinearLayout SchoolLayout = findViewById(R.id.SchoolLinearLayout);
+        String newHabbitName = extras.getString("HabbitObjectName");
+        boolean chipReadyPrep = extras.getBoolean("chipReady");
+        ///////////////////////////////////////
+        //passed variable check
+        if (chipReadyPrep == true) {
             HabbitObject chippedHabit = new HabbitObject(newHabbitName);
-            Chip chip = new Chip(this);
+
             chip.setText(chippedHabit.name);
+            chip.setCheckable(true);
             if(chippedHabit.type == "Work"){
                 WorkLayout.addView(chip);
             }
@@ -44,8 +47,8 @@ public class HabbitsActivity extends AppCompatActivity {
             }
             else if(chippedHabit.type == "Health"){
                 HealthLayout.addView(chip);
-            }
-            
+            } //This code generates chips, which are toggable text boxes
+
         }
 
         Button buttonAdd = findViewById(R.id.buttonAdd);
@@ -55,7 +58,7 @@ public class HabbitsActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), EditActivity.class);
                 intent.putExtra("newHabbitBool", true);
                 startActivity(intent);
-            }
+            } //we pass this variable to the next view
         });
 
         Button buttonRemove = (Button)findViewById(R.id.buttonRemove);
@@ -72,9 +75,12 @@ public class HabbitsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), EditActivity.class);
                 intent.putExtra("newHabbitBool", false);
-                intent.putExtra("HabbitName", true);
+                    intent.putExtra("HabbitName", true); //unfinished
+                //this section of the code was to take the selected chip's text, and check for an object of that name
+                //then pass it to the next view
                 startActivity(intent);
-            }
+            } //we pass these variables to the next view
+            //this also includes the name of the Habit name we are editing
         });
 
         Button buttonHome = findViewById(R.id.buttonHome);

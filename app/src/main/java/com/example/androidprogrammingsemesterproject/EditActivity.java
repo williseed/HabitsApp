@@ -19,6 +19,7 @@ public class EditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+        ////////////////////////////////////
         EditText HabbitName = findViewById(R.id.NameView);
         EditText HabbitDescription= findViewById(R.id.NoteView);
         RadioButton radioWork = findViewById(R.id.radioWork);
@@ -26,8 +27,8 @@ public class EditActivity extends AppCompatActivity {
         RadioButton radioSchool = findViewById(R.id.radioSchool);
         ImageView imageSET = findViewById(R.id.imageView);
         Button SaveButton = findViewById(R.id.buttonSave);
-
         String name =HabbitName.toString();
+        /////////////////////////////////////
         radioWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +54,7 @@ public class EditActivity extends AppCompatActivity {
 SaveButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        if (newHabbitBool = true) {
+        //saves all current information in the form inside of object
             HabbitObject newHabbit = new HabbitObject(name);
             newHabbit.description = HabbitDescription.toString();
             newHabbit.image = imageSET.getDrawable();
@@ -71,31 +72,13 @@ SaveButton.setOnClickListener(new View.OnClickListener() {
 
             }
 
-        }
-        if (newHabbitBool = false) {
-            HabbitObject newHabbit = new HabbitObject(name);
-            newHabbit.description = HabbitDescription.toString();
-            newHabbit.image = imageSET.getDrawable();
 
-            if (radioHealth.isChecked()) {
-                newHabbit.type = "Health";
-
-            }
-            else if (radioWork.isChecked()) {
-                newHabbit.type = "Work";
-
-            }
-            else if (radioSchool.isChecked()) {
-                newHabbit.type = "School";
-
-            }
-
-        }
         boolean chipReady = false;
         Intent intent = new Intent(getApplicationContext(), HabbitsActivity.class);
         intent.putExtra("HabbitObjectName", name);
         intent.putExtra("chipReady", true);
         startActivity(intent);
+        //these passed variables go back to HabbitActivity
     }
 });
     }
