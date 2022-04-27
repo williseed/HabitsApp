@@ -79,8 +79,8 @@ public class LoginActivity extends AppCompatActivity {
      * Return: true if credentials are valid, false otherwise*/
     public boolean correctCredentials(String username, String password) {
         //password: 2022project, username: project@ucmo.edu
-        final String hashedPass = "750dc409838c33f3b5fe0ed691b0328eef39d739dd0814dd116b84ebf22862f8";
-        final String correctUsername = "project@ucmo.edu";
+        final String hashedPass = "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068";
+        final String correctUsername = " ";
         String userHashedEntry = hashPassword(password);
 
         if (userHashedEntry.equals(hashedPass) && username.equals(correctUsername))
