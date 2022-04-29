@@ -31,19 +31,19 @@
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/buttonModifyHabbits"
-                android:layout_width="215dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="cursive"
-                android:text="Modify Habbits"
-                android:textSize="20sp" />
-
-            <Button
                 android:id="@+id/buttonViewProgress"
                 android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="cursive"
                 android:text="View Progress"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/buttonModifyHabbits"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:text="Modify Habbits"
                 android:textSize="20sp" />
 
         </LinearLayout>
