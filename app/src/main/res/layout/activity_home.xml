@@ -43,7 +43,7 @@
                 android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="cursive"
-                android:text="Modify Habbits"
+                android:text="Modify Habits"
                 android:textSize="20sp" />
 
         </LinearLayout>
