@@ -28,7 +28,7 @@ public class ProgressActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.progressListView);
         totalActivitiesPB = (ProgressBar) findViewById(R.id.totalActPB);
         editSelectedBtn = (Button) findViewById(R.id.editSelActInProgress);
-        homeBtn = (Button) findViewById(R.id.homeFromProgress);
+        //homeBtn = (Button) findViewById(R.id.homeFromProgress);
 
         adapter = new ActivityAdapter();
 
@@ -39,7 +39,7 @@ public class ProgressActivity extends AppCompatActivity {
         adapter.addItem(new ActivityItem("Workouts","Workout",3,5,3,R.drawable.running,2));
 
         listView.setAdapter(adapter);
-
+        /*
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +47,7 @@ public class ProgressActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
 
         editSelectedBtn.setOnClickListener(new View.OnClickListener() {
             @Override

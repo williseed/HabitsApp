@@ -11,7 +11,7 @@
     <ListView
         android:id="@+id/progressListView"
         android:layout_width="match_parent"
-        android:layout_height="371dp"
+        android:layout_height="426dp"
         android:choiceMode="singleChoice" />
 
     <TextView
@@ -33,11 +33,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Edit Selected" />
-
-    <Button
-        android:id="@+id/homeFromProgress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Home" />
 
 </LinearLayout>

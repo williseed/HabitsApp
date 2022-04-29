@@ -68,7 +68,7 @@
 
             <TextView
                 android:id="@+id/priorityTextView"
-                android:layout_width="191dp"
+                android:layout_width="136dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="Priority: "
