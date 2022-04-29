@@ -58,6 +58,10 @@ public class ActivityItemView extends LinearLayout{
         this.progressBar.setProgress(progress);
     }
 
+    public void setProgressBarMax(int progressBarMax){
+        this.progressBar.setMax(progressBarMax);
+    };
+
     public void setImageIcon(int resID) {
         imageIcon.setImageResource(resID);
     }

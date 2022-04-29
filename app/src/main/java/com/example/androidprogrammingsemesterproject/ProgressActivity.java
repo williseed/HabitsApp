@@ -32,7 +32,7 @@ public class ProgressActivity extends AppCompatActivity {
 
         adapter = new ActivityAdapter();
 
-        adapter.addItem(new ActivityItem("Running","Mile",3,6.213,0,R.drawable.running,3));
+        adapter.addItem(new ActivityItem("Running","Mile",3,6.213,0,R.drawable.running,0));
         adapter.addItem(new ActivityItem("Working","Report",1,100,36,R.drawable.working,10));
         adapter.addItem(new ActivityItem("Studying","Hour",1,10,5,R.drawable.working,0));
         adapter.addItem(new ActivityItem("Naps","Nap",2,10,2,R.drawable.sleeping,0));
@@ -108,6 +108,7 @@ public class ProgressActivity extends AppCompatActivity {
             itemView.setNameText(item.getName());
             itemView.setUnitText(item.getUnitType(), (int)item.getdoubleProgress(), (int)item.getdoubleMax() );
             itemView.setProgressBar((int) item.getdoubleProgress());
+            itemView.setProgressBarMax((int)item.getdoubleMax());
             itemView.setImageIcon(item.getResID());
             itemView.setPriorityText(item.getActivityPriority());
             itemView.setStreakText(item.getStreak());
